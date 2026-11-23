@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install --legacy-peer-deps --no-audit --no-fund --maxsockets 1",
+  "framework": "nextjs",
+  "regions": ["sin1"]
+}
