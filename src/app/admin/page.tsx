@@ -76,7 +76,10 @@ export default function AdminPage() {
     setStatus("uploading");
     try {
       const ab = await file.arrayBuffer();
-      const b64 = btoa(String.fromCharCode(...new Uint8Array(ab)));
+      const bytes = new Uint8Array(ab);
+      let binary = "";
+      for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+      const b64 = btoa(binary);
 
       // Get current sha if file exists
       let sha: string | undefined;
