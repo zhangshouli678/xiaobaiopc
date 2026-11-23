@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import { Download, Monitor, Apple, Shield, CheckCircle, Zap, HardDrive } from "lucide-react";
+import { Download, Monitor, Apple, Shield, CheckCircle, Zap, HardDrive, ExternalLink } from "lucide-react";
 
 export default function DownloadPage() {
   return (
@@ -20,35 +20,51 @@ export default function DownloadPage() {
 
         {/* Download cards */}
         <div className="mt-10 grid gap-4 sm:grid-cols-2">
-          <a href="#" className="card flex items-center gap-4 p-5 hover:shadow-elevated transition-shadow">
-            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--bg-muted)] text-[var(--text-muted)]">
+          <a
+            href="https://xiaobaiagent.com.cn/download/xiaobai-agent-windows.exe"
+            className="card flex items-center gap-4 p-5 hover:shadow-elevated transition-shadow group"
+          >
+            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--bg-muted)] text-[var(--text-muted)] group-hover:bg-accent-50 group-hover:text-accent-500 transition-colors">
               <Monitor size={22} />
             </div>
             <div className="flex-1">
               <div className="text-sm font-semibold">Windows 安装包</div>
-              <div className="mt-0.5 text-xs text-[var(--text-muted)]">Windows 10 / 11 · .exe · 约 85 MB</div>
+              <div className="mt-0.5 text-xs text-[var(--text-muted)]">Windows 10 / 11（64位）· .exe</div>
             </div>
             <Download size={18} className="text-accent-500" />
           </a>
-          <a href="#" className="card flex items-center gap-4 p-5 hover:shadow-elevated transition-shadow">
-            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--bg-muted)] text-[var(--text-muted)]">
+          <a
+            href="https://xiaobaiagent.com.cn/download/xiaobai-agent-mac.dmg"
+            className="card flex items-center gap-4 p-5 hover:shadow-elevated transition-shadow group"
+          >
+            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--bg-muted)] text-[var(--text-muted)] group-hover:bg-accent-50 group-hover:text-accent-500 transition-colors">
               <Apple size={22} />
             </div>
             <div className="flex-1">
               <div className="text-sm font-semibold">macOS 安装包</div>
-              <div className="mt-0.5 text-xs text-[var(--text-muted)]">macOS 12+ · .dmg · 约 92 MB</div>
+              <div className="mt-0.5 text-xs text-[var(--text-muted)]">macOS 12 及以上 · .dmg</div>
             </div>
             <Download size={18} className="text-accent-500" />
           </a>
         </div>
 
-        <div className="mt-4 card p-4">
+        {/* Official site link */}
+        <div className="mt-4 card p-4 flex items-center gap-3">
+          <ExternalLink size={15} className="shrink-0 text-accent-500" />
+          <div className="flex-1 text-xs text-[var(--text-muted)]">
+            也可前往官网下载最新版本：
+            <a
+              href="https://xiaobaiagent.com.cn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-1 text-accent-500 hover:underline"
+            >
+              xiaobaiagent.com.cn
+            </a>
+          </div>
           <div className="flex items-start gap-2 text-xs text-[var(--text-muted)]">
             <Shield size={14} className="mt-0.5 shrink-0 text-success" />
-            <div>
-              <p>当前版本 v2.4.1 · 更新于 2025-11-20</p>
-              <p className="mt-1">SHA256 校验值将在文件上传后更新于此。安装包未捆绑任何恶意程序。</p>
-            </div>
+            <span>安装包经过安全校验，无捆绑程序</span>
           </div>
         </div>
 
@@ -57,10 +73,10 @@ export default function DownloadPage() {
           <h2 className="mb-4 text-lg font-bold">装好之后做什么？</h2>
           <ol className="flex flex-col gap-3">
             {[
-              "打开小白 Agent，选择你要接入的 AI 模型（推荐 DeepSeek，免费额度够用）",
-              "按提示填入 API Key（学院 L2 有手把手教程）",
-              "找到「新建智能体」入口，用一句话告诉它你想做什么",
-              "跟着学院课程学会迭代和发布，把你的作品上架到市场",
+              "打开小白 Agent，选择你要接入的 AI 模型（推荐 DeepSeek，注册即有免费额度）",
+              "按提示填入 API Key（学院 L2 有手把手截图教程）",
+              "找到「新建智能体」入口，用一句话告诉它你想做什么软件",
+              "跟着学院课程学会调试和发布，把你的作品上架到市场",
             ].map((s, i) => (
               <li key={i} className="card flex gap-4 p-4">
                 <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent-500 text-xs font-bold text-white">
@@ -87,10 +103,10 @@ export default function DownloadPage() {
           </h2>
           <ul className="space-y-1.5 text-xs text-[var(--text-muted)]">
             <li>• 操作系统：Windows 10 / 11（64位）或 macOS 12 及以上</li>
-            <li>• 内存：至少 4 GB（建议 8 GB）</li>
+            <li>• 内存：至少 4 GB（建议 8 GB 以上）</li>
             <li>• 磁盘空间：至少 500 MB 可用空间</li>
             <li>• 网络：需要访问互联网以调用 AI 模型 API</li>
-            <li>• AI 模型：DeepSeek（推荐，免费额度可用）/ OpenAI / Claude / Gemini / 本地 Ollama</li>
+            <li>• AI 模型：DeepSeek（推荐）/ OpenAI / Claude / Gemini / 本地 Ollama 均可接入</li>
           </ul>
         </div>
       </main>
