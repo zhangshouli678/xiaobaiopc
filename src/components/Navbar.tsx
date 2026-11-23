@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Menu, X, Search, Bell } from "lucide-react";
 
 const navLinks = [
@@ -19,7 +18,8 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3 sm:px-6">
         {/* Logo */}
         <Link href="/" className="flex shrink-0 items-center gap-2 font-bold text-[var(--text)]">
-          <Image src="/logo.svg" alt="小白OPC" width={32} height={32} className="rounded-lg" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.svg" alt="小白OPC" width={32} height={32} className="rounded-lg" />
           <span className="text-sm tracking-tight">
             小白<span className="text-accent-500">OPC</span>
           </span>
