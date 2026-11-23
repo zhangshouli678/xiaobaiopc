@@ -1,7 +1,8 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, Zap, Search, Bell, User } from "lucide-react";
+import Image from "next/image";
+import { Menu, X, Search, Bell } from "lucide-react";
 
 const navLinks = [
   { label: "探索市场", href: "/market" },
@@ -18,9 +19,7 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3 sm:px-6">
         {/* Logo */}
         <Link href="/" className="flex shrink-0 items-center gap-2 font-bold text-[var(--text)]">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-500 text-white">
-            <Zap size={16} strokeWidth={2.5} />
-          </span>
+          <Image src="/logo.svg" alt="小白OPC" width={32} height={32} className="rounded-lg" />
           <span className="text-sm tracking-tight">
             小白<span className="text-accent-500">OPC</span>
           </span>
